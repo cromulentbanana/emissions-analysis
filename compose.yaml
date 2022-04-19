@@ -1,0 +1,23 @@
+# This docker compose definition will create application containers for all of
+# the components of the analytics dashboard application
+#
+# Usage: docker-compose up --build
+
+version: "3.8"
+
+services:
+  postgres:
+    build:
+      context: ./postgres/
+      dockerfile: Dockerfile
+    hostname: postgres
+    environment:
+      PSQL_HOST: postgres
+      PSQL_PORT: 5432
+      PSQL_USER: demo
+      PSQL_PASSWORD: demo
+      PSQL_DBNAME: demo
+    volumes:
+      - ./services/postgres:/postgres
+    ports:
+      - 127.0.0.1:${BIRD_PROXY_DOCKER_HOST_PORT:-5432}:5432
