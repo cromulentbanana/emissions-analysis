@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 watching-testrunner = "*"
+pre-commit = "*"
 
 [packages]
 ipython = "*"
@@ -18,6 +19,7 @@ pytest = "*"
 sqlalchemy = "*"
 psycopg = "*"
 psycopg2-binary = "*"
+docker-compose = "*"
 
 [requires]
 python_version = "3.9"
